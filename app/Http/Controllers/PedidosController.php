@@ -57,7 +57,7 @@ class PedidosController extends Controller
             'cliente_id' => 'required','exists:clientes,id'
         ],[ // messages
             'item.*.quantidade.required' => 'Você inseriu algum item sem quantidade',
-            'item.*.quantidade.int' => 'O campo quantidade deve ser inteiro',
+            'item.*.quantidade.integer' => 'O campo quantidade deve ser inteiro',
             'item.*.id.exists' => 'Você inseriu um item que não existe',
             'cliente_id.required' => 'Selecione um cliente',
             'cliente_id.exists' => 'Você inseriu um cliente que não existe',

@@ -1,14 +1,15 @@
 @extends('layouts.app', ['pageName' => 'Pedidos'])
 @section('content')
 <div class="col-12">
-    @if (session('message'))
-    <div class="alert alert-{{session('message')['type']}} alert-dismissible fade show" role="alert">
-        <strong>{{session('message')['message']}}</strong>
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
-    @endif
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
     <a href="{{route('pedido.create')}}" class="btn btn-primary btn-icon-split float-right mb-3">
     <span class="icon text-white-50">
         <i class="fas fa-box-open"></i>
