@@ -127,6 +127,12 @@ class ProdutosController extends Controller
                         ->withErrors($validator)
                         ->withInput();
         }
+        else{
+            $produto->nome = $request->nome;
+            $produto->descricao = $request->descricao;
+            $produto->preco = $request->preco;
+            $produto->vendendo = $request->vendendo;
+        }
         $message;
         try{
             if ($request->hasFile('imagem')){

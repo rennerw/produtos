@@ -33,8 +33,8 @@
         <div class="form-group">
             <label for="vendendo">Colocar à venda *</label>
             <select name="vendendo" id="vendendo" class="form-control form-control-lg" required>
-                <option value="1" selected>Sim</option>
-                <option value="0">Não</option>
+                <option value="1" {{ ($produto->vendendo == 1)? "selected" : '' }} >Sim</option>
+                <option value="0" {{ ($produto->vendendo == 0)? "selected" : '' }} >Não</option>
             </select>
         </div>
 
